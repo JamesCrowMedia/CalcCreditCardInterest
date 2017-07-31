@@ -12,7 +12,7 @@ namespace XUnitTests.ComponentTests
         {
             // ------ Generate Test Data ------
             Card visa = new Card("Visa", 100m, 10m);
-            decimal intrest = visa.GetIntrest();
+            decimal intrest = visa.TotalIntrest();
 
             // ----- Tests -----
             Assert.Equal(10m, intrest);
@@ -23,7 +23,7 @@ namespace XUnitTests.ComponentTests
         {
             // ------ Generate Test Data ------
             Card mastercard = new Card("Master Card", 100m, 5m);
-            decimal intrest = mastercard.GetIntrest();
+            decimal intrest = mastercard.TotalIntrest();
 
             // ----- Tests -----
             Assert.Equal(5m, intrest);
@@ -34,7 +34,7 @@ namespace XUnitTests.ComponentTests
         {
             // ------ Generate Test Data ------
             Card discover = new Card("Discover", 100m, 1m);
-            decimal intrest = discover.GetIntrest();
+            decimal intrest = discover.TotalIntrest();
 
             // ----- Tests -----
             Assert.Equal(1m, intrest);

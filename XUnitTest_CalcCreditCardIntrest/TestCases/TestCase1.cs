@@ -32,9 +32,9 @@ namespace XUnitTests.TestCases
 
             // ----- Tests -----
             IList<Card> cards = person1.Wallets[0].Cards;
-            decimal card0Intrest = cards[0].GetIntrest();
-            decimal card1Intrest = cards[1].GetIntrest();
-            decimal card2Intrest = cards[2].GetIntrest();
+            decimal card0Intrest = cards[0].TotalIntrest();
+            decimal card1Intrest = cards[1].TotalIntrest();
+            decimal card2Intrest = cards[2].TotalIntrest();
             Assert.Equal(10m, card0Intrest);     // Total intrest of Card 0
             Assert.Equal(5m, card1Intrest);      // Total intrest of Card 1
             Assert.Equal(1m, card2Intrest);      // Total intrest of Card 2

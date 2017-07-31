@@ -5,13 +5,13 @@ using System.Text;
 
 namespace CalcCreditCardInterest.Models
 {
-    public class Card : ICard, ICalculateInterest
+    public class Card : ICard, ITotalInterest
     {
         public string Name { get; set; }
         public decimal Balance { get; set; }
         public decimal InterestRate { get; set; }
 
-        public decimal GetIntrest()
+        public decimal TotalIntrest()
         {
             return Decimal.Multiply(this.Balance, this.InterestRate);
         }

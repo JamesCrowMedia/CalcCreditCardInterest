@@ -26,7 +26,7 @@ namespace CalcCreditCardInterest.Models
 
             foreach (Card card in this.Cards)
             {
-                total += card.GetIntrest();
+                total += card.TotalIntrest();
             }
 
             return total;
