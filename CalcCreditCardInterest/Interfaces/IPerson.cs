@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalcCreditCardInterest.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,8 +8,8 @@ namespace CalcCreditCardInterest.Interfaces
     public interface IPerson
     {
         string Name { get; set; }
-        IList<IWallet> Wallets { get; }
+        IList<Wallet> Wallets { get; set; }
 
-        void AddWallet(IWallet wallet);
+        void AddWallet(Wallet wallet);
     }
 }

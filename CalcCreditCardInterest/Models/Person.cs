@@ -8,24 +8,33 @@ namespace CalcCreditCardInterest.Models
     public class Person : IPerson, ITotalInterest
     {
         public string Name { get; set; }
-        public IList<IWallet> Wallets { get; }
+        private IList<Wallet> wallets = new List<Wallet>();
+        public IList<Wallet> Wallets {
+            get { return wallets; }
+            set { wallets = value; }
+        }
 
 
-        public void AddWallet(IWallet wallet)
+        public void AddWallet(Wallet wallet)
         {
-            this.Wallets.Add(wallet);
+            this.wallets.Add(wallet);
         }
 
         public decimal TotalIntrest()
         {
             decimal total = 0;
 
-            foreach (ITotalInterest wallet in this.Wallets)
+            foreach (Wallet wallet in this.Wallets)
             {
                 total += wallet.TotalIntrest();
             }
 
             return total;
+        }
+
+        public Person(string name)
+        {
+            this.Name = name;
         }
     }
 }

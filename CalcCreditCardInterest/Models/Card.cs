@@ -20,7 +20,7 @@ namespace CalcCreditCardInterest.Models
         {
             this.Name = name;
             this.Balance = balance;
-            this.InterestRate = intrestRate;
+            this.InterestRate = Decimal.Multiply(0.01m, intrestRate);
         }
     }
 }
